@@ -2,6 +2,10 @@ cimport stats
 
 from cpython.pycapsule cimport PyCapsule_New, PyCapsule_GetPointer
 
+# This file maps the cdef functions inside stats.pxd to functions callable from python land for testing.
+# See here: https://stackoverflow.com/questions/53619438/how-to-call-a-cython-cdef-function-that-contains-as-a-parameter-a-function-in
+
+
 ctypedef double (*util_f)(double)
 def phi(double x):
     cdef char * name = '_phi'

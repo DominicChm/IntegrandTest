@@ -11,6 +11,8 @@ import fn_map
 import stats
 
 write_limit = 10000
+
+# Flag to indicate whether PDF csv should be written.
 write = len(sys.argv) >= 2 and sys.argv[1] == "w"
 
 
@@ -95,7 +97,7 @@ print(f"PDF eval 2: {eval_pdf(1, 1, 1, 3, 10)}")
 
 x = np.linspace(0, 5, 50)
 
-
+# Eval the PDF over a large grid and save the results to file to be compared between implementations.
 step = 0.1
 if write:
     zs = np.mgrid[-100:100:step, 0:100:step].reshape(2, -1).T

@@ -1,5 +1,8 @@
 from libc cimport math
 
+# A cut down version of Scipy's _stats.pyx file. Isolates studentized range related code for testing.
+
+
 cdef double _phi(double z) nogil:
     """evaluates the normal PDF. Used in `studentized_range`"""
     cdef double inv_sqrt_2pi = 0.3989422804014327
